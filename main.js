@@ -20,7 +20,7 @@ function getCoffeeList(coffee) {
 
     return container;
 }
-// getCoffeeList()
+// getCoffeeList() // this is a comment
 
 function renderCoffees(coffees) {
     var html = '';
