@@ -1,4 +1,14 @@
 "use strict"
+function searchCoffees(e) {
+    let filteredCoffees = [];
+    console.log(e.target)
+    for (let i = 0; i < coffees.length; i++) {
+        if (coffees[i].name.toLowerCase().indexOf(e.target.value.toLowerCase()) > -1) {
+            filteredCoffees.push(coffees[i]);
+        }
+    }
+    renderCoffees(filteredCoffees);
+}
 
 function getCoffeeList(coffee) {
     let container = document.createElement('div')
@@ -6,25 +16,14 @@ function getCoffeeList(coffee) {
     child1.innerText = coffee.name
     let child2 = document.createElement('div')
     child2.innerText = coffee.roast
-
-
     container.appendChild(child1)
     container.appendChild(child2)
-
-
-
-    // var html = '<div class="coffee">';
-    // html += '<td>' + coffee.id + '</td>';
-    // html += '<div>' + coffee.name + '</div>';
-    // html += '<div>' + coffee.roast + '</div>';
-    // html += '</div>';
-
     return container;
 }
-// getCoffeeList() // this is a comment
 
 function renderCoffees(coffees) {
     let coffeesContainer = document.getElementById("coffees");
+    coffeesContainer.innerHTML = ""
     for(let i = coffees.length - 1; i >= 0; i--) {
         coffeesContainer.appendChild(getCoffeeList(coffees[i]))
     }
@@ -35,10 +34,8 @@ function updateCoffees(e) {
     let selectedRoast = roastSelection.value;
     let filteredCoffees = [];
 
-    if(e === "all"){
-        coffees.forEach(function (coffee){
-            filteredCoffees.push(coffee)
-        })
+    if(selectedRoast === "all"){
+        filteredCoffees = coffees
     }else
     coffees.forEach(function(coffee) {
         if (coffee.roast === selectedRoast) {
@@ -48,6 +45,21 @@ function updateCoffees(e) {
     renderCoffees(filteredCoffees);
 }
 
+function addCoffee(){
+
+}
+
+function newId(){
+    return coffees.length + 1;
+}
+
+function newName(){
+    document.getElementById('new-name')
+}
+
+function newRoast(){
+    document.getElementById('coffee-roast-selection')
+}
 // function searchCoffees(value) {
 //     let filteredCoffees = [];
 //     for(let i = 0; i < coffees.length; i++) {
@@ -81,8 +93,12 @@ let coffees = [
 document.querySelector('#coffees');
 let submitButton = document.querySelector('#submit');
 let roastSelection = document.querySelector('#roast-selection');
+let searchBar = document.querySelector('#search-bar')
 
 renderCoffees(coffees);
 
-submitButton.addEventListener('click', updateCoffees);
-roastSelection.addEventListener('click', updateCoffees)
+submitButton.addEventListener('click', addCoffee);
+roastSelection.addEventListener('change', updateCoffees)
+searchBar.addEventListener('keyup', searchCoffees)
+
+
