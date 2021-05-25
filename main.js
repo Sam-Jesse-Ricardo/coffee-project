@@ -30,7 +30,7 @@ function renderCoffees(coffees) {
 }
 
 function updateCoffees(e) {
-    e.preventDefault(); // don't submit the form, we just want to update the data
+    if (e)e.preventDefault(); // don't submit the form, we just want to update the data
     let selectedRoast = roastSelection.value;
     let filteredCoffees = [];
 
@@ -45,20 +45,24 @@ function updateCoffees(e) {
     renderCoffees(filteredCoffees);
 }
 
-function addCoffee(){
-
+function addCoffee(e){
+    e.preventDefault();
+    let coffee = {
+        id: coffees.length + 1,
+        name: newName(),
+        roast: newRoast(),
+    }
+    coffees.push(coffee);
+    updateCoffees();
 }
 
-function newId(){
-    return coffees.length + 1;
-}
 
 function newName(){
-    document.getElementById('new-name')
+    return document.getElementById('new-name').value;
 }
 
 function newRoast(){
-    document.getElementById('coffee-roast-selection')
+   return document.getElementById('coffee-roast-selection').value;
 }
 // function searchCoffees(value) {
 //     let filteredCoffees = [];
