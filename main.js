@@ -12,14 +12,18 @@ function searchCoffees(e) {
 
 function getCoffeeList(coffee) {
     let container = document.createElement('div')
-    let child1 = document.createElement('div')
+    let child1 = document.createElement('h2')
     child1.innerText = coffee.name
+    child1.className = "col-6"
     let child2 = document.createElement('div')
     child2.innerText = coffee.roast
+    child2.className = "roast col-6 text-right"
     container.appendChild(child1)
     container.appendChild(child2)
     return container;
 }
+// child2.setAttribute('style' , 'color=lightgray')
+// document.getElementsByClassName("roast").style.color = "lightgray";
 
 function renderCoffees(coffees) {
     let coffeesContainer = document.getElementById("coffees");
