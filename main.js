@@ -12,9 +12,10 @@ function searchCoffees(e) {
 
 function getCoffeeList(coffee) {
     let container = document.createElement('div')
+    container.className = "col-5 row"
     let child1 = document.createElement('h2')
     child1.innerText = coffee.name
-    child1.className = "col-6"
+    child1.className = "col-5"
     let child2 = document.createElement('div')
     child2.innerText = coffee.roast
     child2.className = "roast col-6 text-right"
@@ -70,6 +71,20 @@ function newName(){
 function newRoast(){
    return document.getElementById('coffee-roast-selection').value;
 }
+
+function removeCoffee(e){
+    // This function will remove coffees that user wish to remove
+    // to our object array called coffees
+    e.preventDefault();
+    let index1 = document.getElementById("new-name").value;
+    let index2 = document.getElementById("coffee-roast-selection").value;
+    for(let i = 0; i < coffees.length; i++) {
+        if (index1 === coffees[i].name && index2 === coffees[i].roast) {
+            coffees.splice(i, 1);
+        }
+    }
+    updateCoffees();
+}
 // function searchCoffees(value) {
 //     let filteredCoffees = [];
 //     for(let i = 0; i < coffees.length; i++) {
@@ -101,6 +116,9 @@ let coffees = [
 ];
 
 // coffees = localStorage.getItem('coffeeList')
+//create a new event listener for a remove button
+let removeNew = document.getElementById("remove");
+removeNew.addEventListener('click', removeCoffee);
 
 document.querySelector('#coffees');
 let submitButton = document.querySelector('#submit');
