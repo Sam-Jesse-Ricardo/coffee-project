@@ -1,3 +1,6 @@
+body {
+    background-color: #FDF8E7;
+}
 table {
     border-collapse: collapse;
     margin: 15px 0;
@@ -7,7 +10,22 @@ td, th {
     border: 1px solid black;
     padding: 5px 10px;
 }
-
-/*.roast{*/
-/*    color: lightgray;*/
-/*}*/
+h1{
+    font-family: 'Pattaya', sans-serif;
+    margin-bottom: -15px;
+}
+h2 {
+    font-family: 'Pattaya', sans-serif;
+}
+.roast{
+    color: gray;
+    font-family: 'Pattaya', sans-serif;
+}
+#coffee{
+    max-height: 100px;
+}
+#header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
