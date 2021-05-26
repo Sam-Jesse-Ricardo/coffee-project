@@ -25,6 +25,8 @@ function getCoffeeList(coffee) {
 // child2.setAttribute('style' , 'color=lightgray')
 // document.getElementsByClassName("roast").style.color = "lightgray";
 
+// coffees = localStorage.setItem('coffeeList',coffees);
+
 function renderCoffees(coffees) {
     let coffeesContainer = document.getElementById("coffees");
     coffeesContainer.innerHTML = ""
@@ -98,6 +100,8 @@ let coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
+// coffees = localStorage.getItem('coffeeList')
+
 document.querySelector('#coffees');
 let submitButton = document.querySelector('#submit');
 let roastSelection = document.querySelector('#roast-selection');
@@ -108,5 +112,26 @@ renderCoffees(coffees);
 submitButton.addEventListener('click', addCoffee);
 roastSelection.addEventListener('change', updateCoffees)
 searchBar.addEventListener('keyup', searchCoffees)
+console.log(searchBar)
 
+// let userInput = document.getElementById("new-name").value;
+// console.log(userInput)
+//
+// localStorage.getItem()
+// localStorage.removeItem()
 
+// < a
+// href = "#"
+// onClick = "removeCoffee(${coffees.indexOf(coffee)})" > -
+// </a>
+
+// function removeCoffee(index) {
+//
+//
+//
+//     console.log('test');
+//     coffees.splice(index, 1);
+//     localStorage.setItem('coffees', JSON.stringify(coffees));
+//     console.log(index);
+//     tbody.innerHTML = renderCoffees(coffees);
+// }
