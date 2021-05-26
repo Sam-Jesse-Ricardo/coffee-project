@@ -15,7 +15,7 @@
         <div class="text-center">
             <h1>Coffee!</h1>
         </div>
-        <hr style="height:2px; width:100%; border-width:0; background-color: lightgray">
+        <hr style="height:1px; width:90%; border-width:0; background-color: lightgray">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-6">
@@ -23,32 +23,35 @@
                 </div>
                 <div class="col-6">
                     <form>
-                        <h6>Roast</h6>
+                        <h6 style="margin-bottom: 2px"><strong>Roast</strong></h6>
                         <label for="roast-selection"></label>
-                        <select id="roast-selection">
+                        <select id="roast-selection" style="width:92%; padding: 5px">
                             <option>all</option>
                             <option>light</option>
                             <option>medium</option>
                             <option>dark</option>
                         </select>
-                        <h6>Coffee Name</h6>
-                        <input id="search-bar" type="text">
-                        <input type="submit"/>
+                        <h6 style="margin-bottom:0; margin-top: 10px"><strong>Coffee Name</strong></h6>
+                        <input id="search-bar" type="text" style="width:92%; margin-top: 0;">
+                        <input type="submit"
+                               style="width:92%; background-color: #3D89CB; color: white; border-radius: 4px; margin-top: 10px"/>
                     </form>
-                    <h2>Add a Coffee!</h2>
+                    <hr style="height:1px; width:92%; border-width:0; background-color: lightgray">
+                    <h2 style="text-align: center">Add a Coffee!</h2>
 
-                    <div class="col-6 width-50">
+                    <div class="col-12 width-50" style="padding: 0">
                         <form>
-                            <h6>Roast</h6>
+                            <h6 style="margin-bottom: 2px"><strong>Roast</strong></h6>
                             <label for="roast-selection"></label>
-                            <select id="coffee-roast-selection">
+                            <select id="coffee-roast-selection" style="width:92%; padding: 5px">
                                 <option>light</option>
                                 <option>medium</option>
                                 <option>dark</option>
                             </select>
-                            <h6>Name</h6>
-                            <input id="new-name" type="text">
-                            <input id="submit" type="submit"/>
+                            <h6 style="margin-bottom:0; margin-top: 10px"><strong>Name</strong></h6>
+                            <input id="new-name" type="text" style="width:92%; margin-top:0">
+                            <input id="submit" type="submit"
+                                   style="width:92%; background-color: #3D89CB; color: white; border-radius: 4px; margin-top: 10px"/>
                         </form>
                     </div>
                 </div>
