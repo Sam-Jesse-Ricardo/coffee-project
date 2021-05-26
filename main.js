@@ -10,18 +10,46 @@ function searchCoffees(e) {
     renderCoffees(filteredCoffees);
 }
 
+
+
 function getCoffeeList(coffee) {
+
+    // create container div
     let container = document.createElement('div')
-    container.className = "col-5 row"
+    // give new container div a class of col-5 row
+    container.className = "col-5 row containerDiv justify-content-between"
+
+    // create new div coffeeContainer
+    let coffeeContainer = document.createElement('div')
+    // give coffeeContainer row class
+    coffeeContainer.className = 'row';
+    // g
+    // Roastive coffeeContainer an id of coffees
+    coffeeContainer.setAttribute('id', 'coffees')
+
+    // create h2 element for coffee name
     let child1 = document.createElement('h2')
-    child1.innerText = coffee.name
-    child1.className = "col-5"
+    // add actual name and class of col-5 to h2
+    child1.innerText = coffee.name;
+    child1.className = "col-5";
+
     let child2 = document.createElement('div')
     child2.innerText = coffee.roast
     child2.className = "roast col-6 text-right"
-    container.appendChild(child1)
-    container.appendChild(child2)
+
+    // appending h2 AND roast div to coffeeContainer
+    coffeeContainer.appendChild(child1)
+    coffeeContainer.appendChild(child2)
+
+    // appending coffeeContainer to container div (col-5 row)
+    container.appendChild(coffeeContainer)
+    console.log(container);
+    console.log('------------------------------------------');
+    console.log(coffeeContainer);
+
+    // return container
     return container;
+
 }
 // child2.setAttribute('style' , 'color=lightgray')
 // document.getElementsByClassName("roast").style.color = "lightgray";
@@ -29,10 +57,20 @@ function getCoffeeList(coffee) {
 // coffees = localStorage.setItem('coffeeList',coffees);
 
 function renderCoffees(coffees) {
-    let coffeesContainer = document.getElementById("coffees");
+    // create new  div
+    let newRowDiv = document.createElement('div');
+    // give new div a class of row
+    newRowDiv.className = "row newRowDiv justify-content-center align-items-center";
+
+    // selecting any-name div from html
+    let coffeesContainer = document.getElementById("any-name");
     coffeesContainer.innerHTML = ""
+
+    //append our newly created row div to our existing any-name div (already exists in html)
+    document.getElementById('any-name').appendChild(newRowDiv);
+
     for(let i = coffees.length - 1; i >= 0; i--) {
-        coffeesContainer.appendChild(getCoffeeList(coffees[i]))
+        newRowDiv.appendChild(getCoffeeList(coffees[i]))
     }
 }
 
