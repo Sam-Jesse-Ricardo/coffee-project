@@ -1,4 +1,5 @@
 
+
 table {
     border-collapse: collapse;
     margin: 15px 0;
@@ -14,20 +15,12 @@ h1{
 }
 h2 {
     font-family: 'Pattaya', sans-serif;
+    white-space: nowrap;
 }
 .roast{
     color: gray;
     font-family: 'Pattaya', sans-serif;
 }
-#coffee{
-    max-height: 100px;
-}
-#header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-#coffees-main{
-    flex-wrap: wrap;
-}
+
+

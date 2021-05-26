@@ -51,10 +51,7 @@ function getCoffeeList(coffee) {
     return container;
 
 }
-// child2.setAttribute('style' , 'color=lightgray')
-// document.getElementsByClassName("roast").style.color = "lightgray";
 
-// coffees = localStorage.setItem('coffeeList',coffees);
 
 function renderCoffees(coffees) {
     // create new  div
@@ -111,8 +108,6 @@ function newRoast(){
 }
 
 function removeCoffee(e){
-    // This function will remove coffees that user wish to remove
-    // to our object array called coffees
     e.preventDefault();
     let index1 = document.getElementById("new-name").value;
     let index2 = document.getElementById("coffee-roast-selection").value;
@@ -123,15 +118,6 @@ function removeCoffee(e){
     }
     updateCoffees();
 }
-// function searchCoffees(value) {
-//     let filteredCoffees = [];
-//     for(let i = 0; i < coffees.length; i++) {
-//         if (coffees[i].name.toLowerCase().indexOf(value.toLowerCase()) > -1) {
-//             filteredCoffees.push(coffees[i]);
-//         }
-//     }
-//     renderCoffees(filteredCoffees);
-// }
 
 
 
@@ -153,8 +139,7 @@ let coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
-// coffees = localStorage.getItem('coffeeList')
-//create a new event listener for a remove button
+
 let removeNew = document.getElementById("remove");
 removeNew.addEventListener('click', removeCoffee);
 
@@ -170,24 +155,3 @@ roastSelection.addEventListener('change', updateCoffees)
 searchBar.addEventListener('keyup', searchCoffees)
 console.log(searchBar)
 
-// let userInput = document.getElementById("new-name").value;
-// console.log(userInput)
-//
-// localStorage.getItem()
-// localStorage.removeItem()
-
-// < a
-// href = "#"
-// onClick = "removeCoffee(${coffees.indexOf(coffee)})" > -
-// </a>
-
-// function removeCoffee(index) {
-//
-//
-//
-//     console.log('test');
-//     coffees.splice(index, 1);
-//     localStorage.setItem('coffees', JSON.stringify(coffees));
-//     console.log(index);
-//     tbody.innerHTML = renderCoffees(coffees);
-// }
