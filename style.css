@@ -1,6 +1,4 @@
-body {
-    background-color: #FDF8E7;
-}
+
 table {
     border-collapse: collapse;
     margin: 15px 0;
@@ -28,4 +26,8 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#coffees-main{
+    flex-wrap: wrap;
 }

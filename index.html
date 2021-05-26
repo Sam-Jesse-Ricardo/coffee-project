@@ -13,7 +13,7 @@
         <title>Coffee Project</title>
         <link rel="stylesheet" href="style.css">
     </head>
-    <body>
+    <body style="background-color: #FDF8E7;">
         <div id="header" class="text-center row">
             <h1>Coffee!</h1>
             <img id="coffee" src="images/coffee-logo-png-7502.png" alt="coffee">
@@ -21,7 +21,7 @@
         <hr style="height:1px; width:90%; border-width:0; background-color: lightgray">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-6">
+                <div id="coffees-main" class="col-6">
                     <div id="coffees"></div>
                 </div>
                 <div class="col-6">
@@ -53,7 +53,9 @@
                             </select>
                             <h6 style="margin-bottom:0; margin-top: 10px"><strong>Name</strong></h6>
                             <input id="new-name" type="text" style="width:92%; margin-top:0">
-                            <input id="submit" type="submit"
+                            <input id="submit" type="submit" value="Add Coffee"
+                                   style="width:92%; background-color: #3D89CB; color: white; border-radius: 4px; margin-top: 10px"/>
+                            <input id="remove" type="submit" value="Remove Coffee"
                                    style="width:92%; background-color: #3D89CB; color: white; border-radius: 4px; margin-top: 10px"/>
                         </form>
                     </div>
